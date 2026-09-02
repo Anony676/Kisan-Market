@@ -1,0 +1,6 @@
+{
+  "name": "Kisan Market",
+  "description": "P2P Agricultural Marketplace connecting farmers directly with buyers for fresh farm produce, real-time APMC Mandi rates, and direct orders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
