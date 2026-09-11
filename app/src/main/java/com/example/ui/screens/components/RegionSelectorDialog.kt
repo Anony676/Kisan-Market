@@ -73,6 +73,7 @@ import com.example.ui.i18n.localizedState
 import com.example.ui.theme.AgroGreenAccent
 import com.example.ui.theme.AgroGreenLight
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
 import com.example.ui.theme.HarvestAmber
 import com.example.util.LocationHelper
 import kotlinx.coroutines.launch
@@ -254,7 +255,7 @@ fun RegionSelectorDialog(
                         Text(
                             text = strings.searchRegionPlaceholder,
                             fontSize = 13.sp,
-                            color = Color(0xFF94A3B8)
+                            color = AgroInputHintDark
                         )
                     },
                     leadingIcon = {
@@ -295,7 +296,9 @@ fun RegionSelectorDialog(
                         focusedBorderColor = AgroGreenPrimary,
                         unfocusedBorderColor = Color(0xFFE2E8F0),
                         focusedTextColor = Color(0xFF0F172A),
-                        unfocusedTextColor = Color(0xFF0F172A)
+                        unfocusedTextColor = Color(0xFF0F172A),
+                        focusedPlaceholderColor = AgroInputHintDark,
+                        unfocusedPlaceholderColor = AgroInputHintDark
                     ),
                     modifier = Modifier
                         .fillMaxWidth()

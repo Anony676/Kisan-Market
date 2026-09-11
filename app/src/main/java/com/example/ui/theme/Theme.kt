@@ -45,7 +45,7 @@ private val LightColorScheme = lightColorScheme(
     surface = AgroSurfaceLight,
     onSurface = AgroTextPrimary,
     surfaceVariant = AgroSurfaceVariant,
-    onSurfaceVariant = AgroTextSecondary,
+    onSurfaceVariant = AgroInputHintDark,
     outline = AgroBorderLight
 )
 

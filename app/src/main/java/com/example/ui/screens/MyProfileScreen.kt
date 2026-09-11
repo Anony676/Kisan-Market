@@ -83,6 +83,9 @@ import com.example.data.model.UserProfile
 import com.example.ui.screens.components.ProducePhotoProvider
 import com.example.ui.theme.AgroGreenAccent
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
+import com.example.ui.theme.AgroInputLabelDark
+import com.example.ui.theme.AgroInputTextDark
 import com.example.ui.theme.HarvestAmber
 import com.example.ui.theme.PriceUpGreen
 
@@ -857,7 +860,7 @@ private fun EditProfileForm(
                             if (nameError != null) nameError = null
                         },
                         label = { Text("Full Name *") },
-                        placeholder = { Text("Your Name") },
+                        placeholder = { Text("Your Name", color = AgroInputHintDark) },
                         leadingIcon = {
                             Icon(imageVector = Icons.Default.Person, contentDescription = null, tint = AgroGreenPrimary)
                         },
@@ -866,8 +869,14 @@ private fun EditProfileForm(
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text, imeAction = ImeAction.Next),
                         colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
                             focusedBorderColor = AgroGreenPrimary,
-                            focusedLabelColor = AgroGreenPrimary
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
@@ -882,7 +891,7 @@ private fun EditProfileForm(
                             if (emailError != null) emailError = null
                         },
                         label = { Text("Email Address *") },
-                        placeholder = { Text("yourgmail gmail com") },
+                        placeholder = { Text("yourgmail gmail com", color = AgroInputHintDark) },
                         leadingIcon = {
                             Icon(imageVector = Icons.Default.Email, contentDescription = null, tint = Color(0xFF2563EB))
                         },
@@ -891,8 +900,14 @@ private fun EditProfileForm(
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email, imeAction = ImeAction.Next),
                         colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
                             focusedBorderColor = AgroGreenPrimary,
-                            focusedLabelColor = AgroGreenPrimary
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
@@ -907,7 +922,7 @@ private fun EditProfileForm(
                             if (phoneError != null) phoneError = null
                         },
                         label = { Text("Phone Number *") },
-                        placeholder = { Text("+91 00000 00000") },
+                        placeholder = { Text("+91 00000 00000", color = AgroInputHintDark) },
                         leadingIcon = {
                             Icon(imageVector = Icons.Default.Phone, contentDescription = null, tint = AgroGreenPrimary)
                         },
@@ -916,8 +931,14 @@ private fun EditProfileForm(
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone, imeAction = ImeAction.Next),
                         colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
                             focusedBorderColor = AgroGreenPrimary,
-                            focusedLabelColor = AgroGreenPrimary
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
@@ -929,15 +950,21 @@ private fun EditProfileForm(
                         value = role,
                         onValueChange = { role = it },
                         label = { Text("Role / Specialty") },
-                        placeholder = { Text("Progressive Farmer & Trader") },
+                        placeholder = { Text("Progressive Farmer & Trader", color = AgroInputHintDark) },
                         leadingIcon = {
                             Icon(imageVector = Icons.Default.Badge, contentDescription = null, tint = Color(0xFF8B5CF6))
                         },
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text, imeAction = ImeAction.Next),
                         colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
                             focusedBorderColor = AgroGreenPrimary,
-                            focusedLabelColor = AgroGreenPrimary
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
@@ -949,15 +976,21 @@ private fun EditProfileForm(
                         value = location,
                         onValueChange = { location = it },
                         label = { Text("Farm / Business Location") },
-                        placeholder = { Text("Your Location") },
+                        placeholder = { Text("Your Location", color = AgroInputHintDark) },
                         leadingIcon = {
                             Icon(imageVector = Icons.Default.LocationOn, contentDescription = null, tint = Color(0xFFEA580C))
                         },
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text, imeAction = ImeAction.Next),
                         colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
                             focusedBorderColor = AgroGreenPrimary,
-                            focusedLabelColor = AgroGreenPrimary
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
@@ -976,7 +1009,7 @@ private fun EditProfileForm(
                             Icon(imageVector = Icons.Default.Info, contentDescription = null, tint = Color(0xFFD97706))
                         },
                         placeholder = {
-                            Text("Tell buyers and fellow farmers about your farm, crop varieties, farming practices, or trade experience...")
+                            Text("Tell buyers and fellow farmers about your farm, crop varieties, farming practices, or trade experience...", color = AgroInputHintDark)
                         },
                         minLines = 4,
                         maxLines = 8,
@@ -999,8 +1032,14 @@ private fun EditProfileForm(
                             }
                         },
                         colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
                             focusedBorderColor = AgroGreenPrimary,
-                            focusedLabelColor = AgroGreenPrimary
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()

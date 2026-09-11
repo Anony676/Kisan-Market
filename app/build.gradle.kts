@@ -6,6 +6,7 @@ plugins {
   alias(libs.plugins.google.devtools.ksp)
   alias(libs.plugins.roborazzi)
   alias(libs.plugins.secrets)
+  // Google services Gradle plugin
   alias(libs.plugins.google.services)
 }
 
@@ -14,7 +15,7 @@ android {
   compileSdk { version = release(36) { minorApiLevel = 1 } }
 
   defaultConfig {
-    applicationId = "com.aistudio.kisanmarket.vpkr"
+    applicationId = "com.aistudio.kisanmarket.zqxmvk"
     minSdk = 24
     targetSdk = 36
     versionCode = 1

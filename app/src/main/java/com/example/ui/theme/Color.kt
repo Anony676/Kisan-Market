@@ -32,6 +32,11 @@ val AgroBorderLight = Color(0xFFD4E7D4)
 val AgroTextPrimary = Color(0xFF0F172A)
 val AgroTextSecondary = Color(0xFF475569)
 val AgroTextMuted = Color(0xFF94A3B8)
+// Dark high-contrast input text, typed characters, labels, and hint colors for optimal readability
+val AgroInputTextDark = Color(0xFF0F172A) // Rich deep charcoal black for crisp, high-contrast typed characters
+val AgroInputLabelDark = Color(0xFF1E293B) // High-contrast slate charcoal for field labels
+val AgroInputHintDark = Color(0xFF334155) // Dark high-contrast slate gray (WCAG AAA compliant on light surfaces)
+val AgroInputHintBlack = Color(0xFF0F172A) // High-contrast deep neutral for crisp field readability
 
 // Status & Indicator Colors
 val PriceUpGreen = Color(0xFF16A34A)

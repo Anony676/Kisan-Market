@@ -8,6 +8,7 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -67,8 +68,10 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -77,10 +80,14 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.R
 import com.example.ui.theme.AgroCanvasLight
 import com.example.ui.theme.AgroGreenAccent
 import com.example.ui.theme.AgroGreenBright
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
+import com.example.ui.theme.AgroInputLabelDark
+import com.example.ui.theme.AgroInputTextDark
 import com.example.ui.theme.AgroTextPrimary
 import com.example.ui.theme.AgroTextSecondary
 import com.example.ui.theme.HarvestAmber
@@ -280,35 +287,25 @@ private fun AuthHeader() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
     ) {
-        // App Logo Emblem
+        // App Logo Emblem - Custom Circular Logo scaled to fit existing circular container without cropping or distortion
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .size(76.dp)
+                .shadow(8.dp, CircleShape, spotColor = Color.Black.copy(alpha = 0.3f))
                 .clip(CircleShape)
-                .background(
-                    Brush.radialGradient(
-                        colors = listOf(
-                            HarvestGoldLight,
-                            HarvestAmber,
-                            AgroGreenAccent
-                        )
-                    )
-                )
-                .shadow(8.dp, CircleShape)
+                .background(Color.White)
+                .testTag("auth_custom_logo_container")
         ) {
-            Box(
-                contentAlignment = Alignment.Center,
+            Image(
+                painter = painterResource(id = R.drawable.img_kisan_custom_logo),
+                contentDescription = "Kisan Market Custom Circular Logo",
+                contentScale = ContentScale.Fit,
                 modifier = Modifier
-                    .size(68.dp)
-                    .clip(CircleShape)
-                    .background(AgroGreenPrimary)
-            ) {
-                Text(
-                    text = "🌾",
-                    fontSize = 32.sp
-                )
-            }
+                    .fillMaxSize()
+                    .padding(2.dp)
+                    .testTag("auth_custom_logo_image")
+            )
         }
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -476,7 +473,7 @@ private fun LoginForm(
                 onFieldChanged()
             },
             label = { Text("Registered Mobile Number or Email") },
-            placeholder = { Text("+91 98765 43210 or email@domain.com") },
+            placeholder = { Text("+91 98765 43210 or email@domain.com", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = if (identifier.any { it.isLetter() || it == '@' }) Icons.Default.Email else Icons.Default.Phone,
@@ -494,9 +491,14 @@ private fun LoginForm(
             keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -514,7 +516,7 @@ private fun LoginForm(
                 onFieldChanged()
             },
             label = { Text("Password (Set at Registration)") },
-            placeholder = { Text("Enter your account password") },
+            placeholder = { Text("Enter your account password", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Lock,
@@ -542,9 +544,14 @@ private fun LoginForm(
             keyboardActions = KeyboardActions(onDone = { validateAndSubmit() }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -791,7 +798,7 @@ private fun RegisterForm(
                 onFieldChanged()
             },
             label = { Text("Full Name / Farm Enterprise *") },
-            placeholder = { Text("e.g. Ramesh Patil") },
+            placeholder = { Text("e.g. Ramesh Patil", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Person,
@@ -809,9 +816,14 @@ private fun RegisterForm(
             keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -829,7 +841,7 @@ private fun RegisterForm(
                 onFieldChanged()
             },
             label = { Text("Mobile Number (Used to Login) *") },
-            placeholder = { Text("+91 98765 43210") },
+            placeholder = { Text("+91 98765 43210", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Phone,
@@ -847,9 +859,14 @@ private fun RegisterForm(
             keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -867,7 +884,7 @@ private fun RegisterForm(
                 onFieldChanged()
             },
             label = { Text("Email Address (Used to Login)") },
-            placeholder = { Text("farmer@gmail.com") },
+            placeholder = { Text("farmer@gmail.com", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Email,
@@ -885,9 +902,14 @@ private fun RegisterForm(
             keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -904,7 +926,7 @@ private fun RegisterForm(
                 onFieldChanged()
             },
             label = { Text("Village / Mandi / District") },
-            placeholder = { Text("e.g. Nashik, Maharashtra") },
+            placeholder = { Text("e.g. Nashik, Maharashtra", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.LocationOn,
@@ -920,9 +942,14 @@ private fun RegisterForm(
             keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -940,7 +967,7 @@ private fun RegisterForm(
                 onFieldChanged()
             },
             label = { Text("Create Password *") },
-            placeholder = { Text("At least 4 characters") },
+            placeholder = { Text("At least 4 characters", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Lock,
@@ -968,9 +995,14 @@ private fun RegisterForm(
             keyboardActions = KeyboardActions(onNext = { focusManager.moveFocus(FocusDirection.Down) }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -988,7 +1020,7 @@ private fun RegisterForm(
                 onFieldChanged()
             },
             label = { Text("Confirm Password *") },
-            placeholder = { Text("Re-enter your password") },
+            placeholder = { Text("Re-enter your password", color = AgroInputHintDark) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Lock,
@@ -1016,9 +1048,14 @@ private fun RegisterForm(
             keyboardActions = KeyboardActions(onDone = { validateAndRegister() }),
             shape = RoundedCornerShape(14.dp),
             colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = AgroInputTextDark,
+                unfocusedTextColor = AgroInputTextDark,
                 focusedBorderColor = AgroGreenPrimary,
                 unfocusedBorderColor = Color(0xFFCBD5E1),
-                focusedLabelColor = AgroGreenPrimary
+                focusedLabelColor = AgroGreenPrimary,
+                unfocusedLabelColor = AgroInputLabelDark,
+                focusedPlaceholderColor = AgroInputHintDark,
+                unfocusedPlaceholderColor = AgroInputHintDark
             ),
             modifier = Modifier
                 .fillMaxWidth()

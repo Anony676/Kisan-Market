@@ -56,6 +56,9 @@ import com.example.ui.i18n.localizedQualityGrade
 import com.example.ui.i18n.localizedTitle
 import com.example.ui.i18n.localizedUnit
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
+import com.example.ui.theme.AgroInputLabelDark
+import com.example.ui.theme.AgroInputTextDark
 import com.example.ui.theme.PriceUpGreen
 
 @Composable
@@ -265,9 +268,19 @@ fun PlaceOrderDialog(
                     value = buyerName,
                     onValueChange = { buyerName = it },
                     label = { Text(strings.buyerName) },
+                    placeholder = { Text("e.g. Ramesh Patil", color = AgroInputHintDark) },
                     singleLine = true,
                     shape = RoundedCornerShape(10.dp),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = AgroInputTextDark,
+                        unfocusedTextColor = AgroInputTextDark,
+                        focusedBorderColor = AgroGreenPrimary,
+                        unfocusedBorderColor = Color(0xFFCBD5E1),
+                        focusedLabelColor = AgroGreenPrimary,
+                        unfocusedLabelColor = AgroInputLabelDark,
+                        focusedPlaceholderColor = AgroInputHintDark,
+                        unfocusedPlaceholderColor = AgroInputHintDark
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("order_buyer_name_input")
@@ -279,9 +292,19 @@ fun PlaceOrderDialog(
                     value = buyerPhone,
                     onValueChange = { buyerPhone = it },
                     label = { Text(strings.buyerPhone) },
+                    placeholder = { Text("+91 98765 43210", color = AgroInputHintDark) },
                     singleLine = true,
                     shape = RoundedCornerShape(10.dp),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = AgroInputTextDark,
+                        unfocusedTextColor = AgroInputTextDark,
+                        focusedBorderColor = AgroGreenPrimary,
+                        unfocusedBorderColor = Color(0xFFCBD5E1),
+                        focusedLabelColor = AgroGreenPrimary,
+                        unfocusedLabelColor = AgroInputLabelDark,
+                        focusedPlaceholderColor = AgroInputHintDark,
+                        unfocusedPlaceholderColor = AgroInputHintDark
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("order_buyer_phone_input")
@@ -293,9 +316,19 @@ fun PlaceOrderDialog(
                     value = deliveryAddress,
                     onValueChange = { deliveryAddress = it },
                     label = { Text(strings.deliveryAddress) },
+                    placeholder = { Text("e.g. Shop 14, APMC Market Yard / Delivery Address", color = AgroInputHintDark) },
                     maxLines = 2,
                     shape = RoundedCornerShape(10.dp),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = AgroInputTextDark,
+                        unfocusedTextColor = AgroInputTextDark,
+                        focusedBorderColor = AgroGreenPrimary,
+                        unfocusedBorderColor = Color(0xFFCBD5E1),
+                        focusedLabelColor = AgroGreenPrimary,
+                        unfocusedLabelColor = AgroInputLabelDark,
+                        focusedPlaceholderColor = AgroInputHintDark,
+                        unfocusedPlaceholderColor = AgroInputHintDark
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("order_delivery_address_input")

@@ -43,6 +43,7 @@ import com.example.ui.i18n.AppLanguage
 import com.example.ui.i18n.LocalAppStrings
 import com.example.ui.theme.AgroGreenAccent
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
 import com.example.ui.theme.HarvestAmber
 
 @Composable
@@ -218,7 +219,7 @@ fun KisanTopAppBar(
                             Text(
                                 text = strings.searchProducePlaceholder,
                                 fontSize = 13.sp,
-                                color = Color(0xFF64748B)
+                                color = AgroInputHintDark
                             )
                         },
                         leadingIcon = {
@@ -236,7 +237,9 @@ fun KisanTopAppBar(
                             focusedBorderColor = HarvestAmber,
                             unfocusedBorderColor = Color.Transparent,
                             focusedTextColor = Color(0xFF0F172A),
-                            unfocusedTextColor = Color(0xFF0F172A)
+                            unfocusedTextColor = Color(0xFF0F172A),
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .weight(1f)

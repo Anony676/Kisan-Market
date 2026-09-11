@@ -52,6 +52,7 @@ import com.example.ui.i18n.AppLanguage
 import com.example.ui.i18n.LocalAppStrings
 import com.example.ui.theme.AgroGreenAccent
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
 import com.example.ui.theme.HarvestAmber
 
 @Composable
@@ -148,7 +149,7 @@ fun LanguageSelectorDialog(
                         Text(
                             text = "Search language / भाषा खोजें...",
                             fontSize = 13.sp,
-                            color = Color(0xFF94A3B8)
+                            color = AgroInputHintDark
                         )
                     },
                     leadingIcon = {
@@ -165,7 +166,11 @@ fun LanguageSelectorDialog(
                         focusedContainerColor = Color(0xFFF8FAFC),
                         unfocusedContainerColor = Color(0xFFF8FAFC),
                         focusedBorderColor = AgroGreenPrimary,
-                        unfocusedBorderColor = Color(0xFFE2E8F0)
+                        unfocusedBorderColor = Color(0xFFE2E8F0),
+                        focusedTextColor = Color(0xFF0F172A),
+                        unfocusedTextColor = Color(0xFF0F172A),
+                        focusedPlaceholderColor = AgroInputHintDark,
+                        unfocusedPlaceholderColor = AgroInputHintDark
                     ),
                     modifier = Modifier
                         .fillMaxWidth()

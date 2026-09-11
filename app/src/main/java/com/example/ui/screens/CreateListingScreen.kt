@@ -93,6 +93,9 @@ import com.example.data.sample.AgriculturalProduceCatalog
 import com.example.data.sample.VarietySeedItem
 import com.example.ui.theme.AgroGreenAccent
 import com.example.ui.theme.AgroGreenPrimary
+import com.example.ui.theme.AgroInputHintDark
+import com.example.ui.theme.AgroInputLabelDark
+import com.example.ui.theme.AgroInputTextDark
 import com.example.ui.theme.HarvestAmber
 import com.example.ui.theme.PriceUpGreen
 
@@ -421,10 +424,19 @@ fun CreateListingScreen(
                         value = title,
                         onValueChange = { title = it },
                         label = { Text(strings.fieldCropTitle) },
-                        placeholder = { Text("e.g. Nashik A-Grade Garwa Red Onions") },
+                        placeholder = { Text("e.g. Nashik A-Grade Garwa Red Onions", color = AgroInputHintDark) },
                         singleLine = true,
                         shape = RoundedCornerShape(10.dp),
-                        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
+                            focusedBorderColor = AgroGreenPrimary,
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
+                        ),
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("create_listing_title_input")
@@ -440,7 +452,7 @@ fun CreateListingScreen(
                                 variety = it
                             },
                             label = { Text(strings.fieldVariety) },
-                            placeholder = { Text("e.g. Garwa / Sharbati (or type custom seed)") },
+                            placeholder = { Text("e.g. Garwa / Sharbati (or type custom seed)", color = AgroInputHintDark) },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Spa,
@@ -485,7 +497,16 @@ fun CreateListingScreen(
                             },
                             singleLine = true,
                             shape = RoundedCornerShape(10.dp),
-                            colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = AgroInputTextDark,
+                                unfocusedTextColor = AgroInputTextDark,
+                                focusedBorderColor = AgroGreenPrimary,
+                                unfocusedBorderColor = Color(0xFFCBD5E1),
+                                focusedLabelColor = AgroGreenPrimary,
+                                unfocusedLabelColor = AgroInputLabelDark,
+                                focusedPlaceholderColor = AgroInputHintDark,
+                                unfocusedPlaceholderColor = AgroInputHintDark
+                            ),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .testTag("create_listing_variety_input")
@@ -713,10 +734,19 @@ fun CreateListingScreen(
                             value = priceText,
                             onValueChange = { priceText = it },
                             label = { Text("Direct Price (₹/$unit)") },
-                            placeholder = { Text("e.g. 28.5") },
+                            placeholder = { Text("e.g. 28.5", color = AgroInputHintDark) },
                             singleLine = true,
                             shape = RoundedCornerShape(10.dp),
-                            colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = AgroInputTextDark,
+                                unfocusedTextColor = AgroInputTextDark,
+                                focusedBorderColor = AgroGreenPrimary,
+                                unfocusedBorderColor = Color(0xFFCBD5E1),
+                                focusedLabelColor = AgroGreenPrimary,
+                                unfocusedLabelColor = AgroInputLabelDark,
+                                focusedPlaceholderColor = AgroInputHintDark,
+                                unfocusedPlaceholderColor = AgroInputHintDark
+                            ),
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("create_listing_price_input")
@@ -726,10 +756,19 @@ fun CreateListingScreen(
                             value = quantityText,
                             onValueChange = { quantityText = it },
                             label = { Text("Total Quantity ($unit)") },
-                            placeholder = { Text("e.g. 2500") },
+                            placeholder = { Text("e.g. 2500", color = AgroInputHintDark) },
                             singleLine = true,
                             shape = RoundedCornerShape(10.dp),
-                            colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = AgroInputTextDark,
+                                unfocusedTextColor = AgroInputTextDark,
+                                focusedBorderColor = AgroGreenPrimary,
+                                unfocusedBorderColor = Color(0xFFCBD5E1),
+                                focusedLabelColor = AgroGreenPrimary,
+                                unfocusedLabelColor = AgroInputLabelDark,
+                                focusedPlaceholderColor = AgroInputHintDark,
+                                unfocusedPlaceholderColor = AgroInputHintDark
+                            ),
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("create_listing_quantity_input")
@@ -742,10 +781,19 @@ fun CreateListingScreen(
                         value = minOrderText,
                         onValueChange = { minOrderText = it },
                         label = { Text("Minimum Order Quantity ($unit)") },
-                        placeholder = { Text("e.g. 25") },
+                        placeholder = { Text("e.g. 25", color = AgroInputHintDark) },
                         singleLine = true,
                         shape = RoundedCornerShape(10.dp),
-                        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
+                            focusedBorderColor = AgroGreenPrimary,
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
+                        ),
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("create_listing_min_order_input")
@@ -770,7 +818,7 @@ fun CreateListingScreen(
                                 farmLocation = it
                             },
                             label = { Text("Farm / Dispatch Location") },
-                            placeholder = { Text(if (isDetectingLocation) "Detecting location..." else "e.g. Dindori, Nashik") },
+                            placeholder = { Text(if (isDetectingLocation) "Detecting location..." else "e.g. Dindori, Nashik", color = AgroInputHintDark) },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.LocationOn,
@@ -838,7 +886,16 @@ fun CreateListingScreen(
                             },
                             singleLine = true,
                             shape = RoundedCornerShape(10.dp),
-                            colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = AgroInputTextDark,
+                                unfocusedTextColor = AgroInputTextDark,
+                                focusedBorderColor = AgroGreenPrimary,
+                                unfocusedBorderColor = Color(0xFFCBD5E1),
+                                focusedLabelColor = AgroGreenPrimary,
+                                unfocusedLabelColor = AgroInputLabelDark,
+                                focusedPlaceholderColor = AgroInputHintDark,
+                                unfocusedPlaceholderColor = AgroInputHintDark
+                            ),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .testTag("create_listing_location_input")
@@ -931,7 +988,7 @@ fun CreateListingScreen(
                         value = harvestDate,
                         onValueChange = { harvestDate = it },
                         label = { Text("Harvest Date") },
-                        placeholder = { Text("e.g. 27 Aug 2026 / Fresh Today") },
+                        placeholder = { Text("e.g. 27 Aug 2026 / Fresh Today", color = AgroInputHintDark) },
                         trailingIcon = {
                             IconButton(
                                 onClick = { showDatePickerDialog = true },
@@ -947,7 +1004,16 @@ fun CreateListingScreen(
                         },
                         singleLine = true,
                         shape = RoundedCornerShape(10.dp),
-                        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = AgroGreenPrimary),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = AgroInputTextDark,
+                            unfocusedTextColor = AgroInputTextDark,
+                            focusedBorderColor = AgroGreenPrimary,
+                            unfocusedBorderColor = Color(0xFFCBD5E1),
+                            focusedLabelColor = AgroGreenPrimary,
+                            unfocusedLabelColor = AgroInputLabelDark,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
+                        ),
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("create_listing_harvest_date_input")
@@ -1233,12 +1299,12 @@ fun VarietySeedSelectionSheet(
                     OutlinedTextField(
                         value = searchQuery,
                         onValueChange = { searchQuery = it },
-                        placeholder = { Text("Search variety, crop, or type custom seed...", fontSize = 13.sp, color = Color.White.copy(alpha = 0.7f)) },
+                        placeholder = { Text("Search variety, crop, or type custom seed...", fontSize = 13.sp, color = AgroInputHintDark) },
                         leadingIcon = {
                             Icon(
                                 imageVector = Icons.Default.Search,
                                 contentDescription = null,
-                                tint = Color.White.copy(alpha = 0.8f),
+                                tint = AgroGreenPrimary,
                                 modifier = Modifier.size(18.dp)
                             )
                         },
@@ -1248,7 +1314,7 @@ fun VarietySeedSelectionSheet(
                                     Icon(
                                         imageVector = Icons.Default.Close,
                                         contentDescription = "Clear",
-                                        tint = Color.White,
+                                        tint = Color(0xFF64748B),
                                         modifier = Modifier.size(16.dp)
                                     )
                                 }
@@ -1257,12 +1323,14 @@ fun VarietySeedSelectionSheet(
                         singleLine = true,
                         shape = RoundedCornerShape(12.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White,
-                            focusedContainerColor = Color.White.copy(alpha = 0.18f),
-                            unfocusedContainerColor = Color.White.copy(alpha = 0.12f),
-                            focusedBorderColor = Color.White,
-                            unfocusedBorderColor = Color.White.copy(alpha = 0.4f)
+                            focusedTextColor = Color(0xFF0F172A),
+                            unfocusedTextColor = Color(0xFF0F172A),
+                            focusedContainerColor = Color.White,
+                            unfocusedContainerColor = Color.White,
+                            focusedBorderColor = AgroGreenPrimary,
+                            unfocusedBorderColor = Color.Transparent,
+                            focusedPlaceholderColor = AgroInputHintDark,
+                            unfocusedPlaceholderColor = AgroInputHintDark
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
